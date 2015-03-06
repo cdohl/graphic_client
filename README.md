@@ -6,12 +6,21 @@ A network socket based data transfer from programming languages such as Python o
 This should allow easy implementation of Oculus Rift.
 
 The current status is very alpha, and more a demonstration of the concept and speed of data transfer. You have to start the server and wait for some message from the client on port 5111, then you can send commands to display data. The commands are described in guiscript.cs, e.g.
+
 const char cmd_plane = 'P';//simple plane no argument
+
 const char cmd_cube = 'C';//cube, "C,x,y,z,s" where x,y,z is position, and s is size
+
 const char cmd_pmesh = 'B';//single sided linear mesh "M,n1,n2,n3,n4,...." 
+
 const char cmd_cmesh = 'K';//cylinder mesh "K,n1,n2,n3,n4,...."
+
 const char cmd_mmesh = 'M';//planar Mesh "M,Nx,Nz,dNx,dNz,n1,n2,n3,...."
+
 const char cmd_mmesh_mod = 'm';//modify Mesh "m,n,n1,n2,n3,...." where n is the object number
+
 const char cmd_destroy = 'D';//destroy object "D,n" where n is the object number
+
 const char cmd_obj_transform = 't';//transform object : change position "t,p,n,x,y,z", change rotation "t,r,n,x,y,z", change scale "t,s,n,x,y,z"
+
 const char cmd_load_resource = 'L';//Load resource "L,coordinates" loads the resource named "coordinates", retuns object number
